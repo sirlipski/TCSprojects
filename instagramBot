@@ -1,0 +1,33 @@
+from InstagramAPI import InstagramAPI
+from PIL import Image
+import requests
+from io import BytesIO
+import os
+import shutil
+
+username = 'tonyanevkotesting'
+password = 'asdfghjkl123'
+image = '/Users/ivan.lipski/Desktop/newWork/pics/pic2.jpg'
+text = 'testing 1'
+
+#globalImageNumber
+
+InstagramAPI = InstagramAPI(username, password)
+InstagramAPI.login()  # login
+
+def get_image(url):
+    f = open('pic1.jpg','wb')
+    f.write(requests.get(url).content)
+    f.close()
+    shutil.move('/Users/ivan.lipski/Desktop/newWork/pic1.jpg', '/Users/ivan.lipski/Desktop/newWork/pics/pic1.jpg')
+
+def upload_photo(image, text):
+    photo_path = image
+    caption = text
+    InstagramAPI.uploadPhoto(photo_path, caption=caption)
+
+imageForTest = get_image('https://cdn.vox-cdn.com/thumbor/s6cI4NEU9hgaUFjXfyVPMmMc044=/cdn.vox-cdn.com/uploads/chorus_asset/file/3847870/11376655_479893395513491_201556343_n.0.jpg')
+
+#upload_photo(image,"testing3")
+
+
