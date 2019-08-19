@@ -3,14 +3,19 @@ import random
 import textwrap
 from datetime import datetime
 
-def getAquote():
-    lines = open('movie_quotes_final.txt').read().split("\n\n")
-    myline = lines[random.randint(1,len(lines))]
-    return myline.strip()
-    with open('movie_quotes_final.txt', "w") as f:
+def deleteQuote(myline):
+    with open("movie_quotes_final.txt", "r") as f:
+        lines = f.readlines()
+    with open("movie_quotes_final.txt", "w") as f:
         for line in lines:
-            if line.strip('\n\n') != myline:
+            if line.strip("\n\n") != myline:
                 f.write(line)
+
+def getAquote():
+    lines = open('movie_quotes_final.txt').read().split("\n")
+    myline = lines[random.randint(1,len(lines))]
+    deleteQuote(myline)
+    return myline.strip()
 
 
 def imageCreate(text,color,font,fontSize,name):
