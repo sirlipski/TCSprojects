@@ -9,8 +9,8 @@ from datetime import datetime, timedelta
 import random
 import time as t
 
-username = 'tonyanevko'
-password = 'asdfghjkl123'
+username = 'login'
+password = 'password'
 caption = '#bot #coding #2019 #everydayimprove #testing'
 
 
