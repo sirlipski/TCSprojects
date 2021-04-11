@@ -1,2 +1,1 @@
-# TCSprojects
-SchoolProjects
+This repository contains several high schools problems. One of them is in Java, which calculates Perfect numbers. It got to 25th perfect number in a week. Other files are part of my instagram bot, which would post a picture with a randomly selected movie quote from a txt file.
